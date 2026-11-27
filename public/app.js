@@ -285,8 +285,8 @@ function speak(title,v){
     const l=LANGS.find(x=>x[0]===S.lang);u.lang=l?l[2]:"en-IN";u.rate=.92;
     // Android needs an explicit voice for Indian languages; use one that matches if the phone has it.
     const vs=speechSynthesis.getVoices();
-    const v=vs.find(x=>x.lang===u.lang)||vs.find(x=>x.lang.replace("_","-").split("-")[0]===u.lang.split("-")[0]);
-    if(v)u.voice=v;
+        const voice=vs.find(x=>x.lang===u.lang)||vs.find(x=>x.lang.replace("_","-").split("-")[0]===u.lang.split("-")[0]);
+    if(voice)u.voice=voice;
     else if(vs.length&&u.lang!=="en-IN")setStatus("Your phone has no voice for this language. Install it in Settings, Text-to-speech output.");
     speechSynthesis.speak(u);
   }catch(e){setStatus("Reading aloud is not available in this browser.")}
