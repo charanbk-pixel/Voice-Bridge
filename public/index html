@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Voice Bridge</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans+Bengali:wght@400;600;700&family=Noto+Sans+Gujarati:wght@400;600;700&family=Noto+Sans+Gurmukhi:wght@400;600;700&family=Noto+Sans+Kannada:wght@400;600;700&family=Noto+Sans+Malayalam:wght@400;600;700&family=Noto+Sans+Oriya:wght@400;600;700&family=Noto+Sans+Tamil:wght@400;600;700&family=Noto+Sans+Telugu:wght@400;600;700&family=Noto+Sans+Ol+Chiki:wght@400;700&family=Noto+Sans+Meetei+Mayek:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="keynote" id="keynote" role="note">AI key not set: using built-in keyword matching. Translations that need AI are unavailable.</div>
+  <header>
+    <div class="brand">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="var(--brand)"/><path d="M6 24 Q20 8 34 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M10 24v6M16 19v11M24 19v11M30 24v6" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
+      <span>Voice Bridge</span>
+    </div>
+    <div class="tools">
+      <select id="lang" aria-label="Language"></select>
+      <button class="icon-btn" id="theme" aria-label="Light or dark">◐</button>
+    </div>
+  </header>
+
+  <h1 id="t-title"></h1>
+  <p class="lead" id="t-lead"></p>
+
+  <section class="voice" aria-live="polite">
+    <button class="mic" id="mic" aria-pressed="false" aria-label="Speak">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+    </button>
+    <div class="miclabel" id="t-speak"></div>
+    <form class="typed" id="form">
+      <input id="q" type="text" autocomplete="off" aria-label="Describe the problem">
+      <button class="go" type="submit" aria-label="Go">→</button>
+    </form>
+    <div class="status" id="status"></div>
+  </section>
+
+  <h2 id="t-pickDoc"></h2>
+  <div class="grid" id="docs"></div>
+
+  <div id="probWrap" hidden>
+    <h2 id="t-pickProblem"></h2>
+    <div class="grid" id="probs"></div>
+  </div>
+
+  <div id="result" hidden></div>
+  <p class="langnote" id="langnote" hidden></p>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
